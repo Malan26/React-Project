@@ -1,0 +1,230 @@
+.menu {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(67, 46, 8, 0.408);
+}
+.menu .menuTitle {
+  font-family: cursive;
+  font-size: 60px;
+}
+
+.menuList {
+  width: 100vw;
+  height: auto;
+ 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  
+  
+}
+
+.menuItem {
+  position: relative;
+  border-radius: 15px;
+  width: 300px;
+  min-height: 100px;
+  margin: 20px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  background: #fff;
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+  transition: all 0.4s ease;
+  animation: fadeUp 0.8s ease-out forwards;
+  opacity: 0;
+  
+ 
+}
+
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menuItem:hover {
+  transform: perspective(1000px) rotateY(8deg) rotateX(3deg) scale(1.05);
+  box-shadow: 0 10px 25px rgba(17, 17, 17, 0.823);
+  cursor: pointer;
+}
+
+
+.menuItem div {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 100%;
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: transform 0.5s ease;
+}
+
+
+.menuItem:hover div {
+  transform: scale(1.1);
+}
+
+.menuItem h1,
+.menuItem p {
+  margin-left: 20px;
+  opacity: 0.8;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.menuItem:hover h1 {
+  color: #3b0e0e;
+  opacity: 1;
+}
+
+.menuItem h1::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #410303;
+  transition: width 0.3s ease-in-out;
+}
+
+.menuItem:hover h1::after {
+  width: 60%;
+}
+
+
+@media only screen and (max-width: 1300px) {
+  .menuList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .menuList {
+    grid-template-columns: 1fr;
+  }
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+  gap: 15px;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+.pagination button {
+  padding: 10px 18px;
+  border: none;
+  background: linear-gradient(135deg, #7aaa3f, #4b7f2a);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.pagination button:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #89c248, #5c9230);
+}
+
+.pagination button:disabled {
+  background: #ccc;
+  color: #777;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.pagination span {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+}
+
+.addBtn {
+  margin-top: 15px;
+  padding: 10px 18px;
+  background-color: #10d0de;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.addBtn:hover {
+  background-color: #0bb3be;
+  transform: scale(1.05);
+}
+
+.quantityControl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: -68px;
+  margin-bottom: -59px;
+}
+
+.quantityControl button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  background-color: #121619;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  
+}
+
+.quantityControl button:hover {
+  background-color: #333;
+  transform: scale(1.1);
+}
+
+.quantityControl span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.confirmBtn {
+  margin-top: 12px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #28a745, #1e7e34);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.confirmBtn:hover {
+  background: linear-gradient(135deg, #34d058, #238636);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.2);
+}
+
+.confirmBtn:active {
+  transform: scale(0.95);
+  background: #1e7e34;
+}
+
+
